@@ -25,5 +25,5 @@ into train and test sets.
 ## How to run
 `python sentiment.py <folder> <approach>`
 
-1. <folder> can be `data/imdb/` or `data/twitter/` 
-2. <approach> can be `0` or `1` as mentioned in approaches.
+1. *folder* can be `data/imdb/` or `data/twitter/` 
+2. *approach* can be `0` or `1` as mentioned in approaches.
