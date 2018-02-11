@@ -23,5 +23,7 @@ into train and test sets.
 2. The Twitter Dataset, taken from [here][2], contains 900,000 classified tweets split into 750k train and 150k test sets. The overall distribution of labels is balanced (450k pos and 450k neg).
 
 ## How to run
-`python sentiment.py <folder> <technique>`
-Folder can be `data/imdb/` or `data/twitter/` while technique can be `0` or `1` as mentioned in approaches.
+`python sentiment.py <folder> <approach>`
+
+1. <folder> can be `data/imdb/` or `data/twitter/` 
+2. <approach> can be `0` or `1` as mentioned in approaches.
