@@ -84,7 +84,6 @@ def feature_vecs_NLP(train_pos, train_neg, test_pos, test_neg):
     #   (1) Contains no stop words
     #   (2) Is in at least 1% of the positive texts or 1% of the negative texts
     #   (3) Is in at least twice as many postive texts as negative texts, or vice-versa.
-    # YOUR CODE HERE
 
     features = []
 
@@ -106,7 +105,6 @@ def feature_vecs_NLP(train_pos, train_neg, test_pos, test_neg):
 
     # Using the above words as features, construct binary vectors for each text in the training and test set.
     # These should be python lists containing 0 and 1 integers.
-    # YOUR CODE HERE
     
     train_pos_vec = map(lambda y: map(lambda x: 1 if x in y else 0, features), train_pos)
     train_neg_vec = map(lambda y: map(lambda x: 1 if x in y else 0, features), train_neg)
@@ -124,7 +122,6 @@ def feature_vecs_DOC(train_pos, train_neg, test_pos, test_neg):
     """
     # Doc2Vec requires LabeledSentence objects as input.
     # Turn the datasets from lists of words to lists of LabeledSentence objects.
-    # YOUR CODE HERE
     
     def labelSentence(text_list, label):
         labeled = []
@@ -152,7 +149,6 @@ def feature_vecs_DOC(train_pos, train_neg, test_pos, test_neg):
         model.train(sentences)
 
     # Use the docvecs function to extract the feature vectors for the training and test data
-    # YOUR CODE HERE
 
     train_pos_vec = []
     train_neg_vec = []
@@ -182,7 +178,6 @@ def build_models_NLP(train_pos_vec, train_neg_vec):
     # Use sklearn's BernoulliNB and LogisticRegression functions to fit two models to the training data.
     # For BernoulliNB, use alpha=1.0 and binarize=None
     # For LogisticRegression, pass no parameters
-    # YOUR CODE HERE
    
     X = train_pos_vec + train_neg_vec
 
@@ -201,8 +196,7 @@ def build_models_DOC(train_pos_vec, train_neg_vec):
 
     # Use sklearn's GaussianNB and LogisticRegression functions to fit two models to the training data.
     # For LogisticRegression, pass no parameters
-    # YOUR CODE HERE
-
+    
     X = train_pos_vec + train_neg_vec
 
     nb_model = GaussianNB().fit(X, Y)
@@ -217,7 +211,6 @@ def evaluate_model(model, test_pos_vec, test_neg_vec, print_confusion=False):
     Prints the confusion matrix and accuracy of the model.
     """
     # Use the predict function and calculate the true/false positives and true/false negative.
-    # YOUR CODE HERE
 
     Y = ["pos"]*len(test_pos_vec) + ["neg"]*len(test_neg_vec)
     X = test_pos_vec + test_neg_vec
